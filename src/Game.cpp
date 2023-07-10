@@ -24,7 +24,7 @@ void Game::start()
 
     while (true)
     {
-        this->GamemodePtr->updateWorld();
+        this->GamemodePtr->runGamemode();
     }
 }
 
