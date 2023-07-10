@@ -23,6 +23,5 @@ private:
 	Render();
 
 	~Render();
-
 };
 
