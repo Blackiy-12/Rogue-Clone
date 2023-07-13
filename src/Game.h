@@ -23,6 +23,6 @@ private:
 private:
 	static Game* GamePtr;
 
-	std::unique_ptr<Gamemode> GamemodePtr;
+	std::shared_ptr<Gamemode> GamemodePtr;
 };
 

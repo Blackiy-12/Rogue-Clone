@@ -18,19 +18,29 @@ Game* Game::getGamePointer()
     return Game::GamePtr;
 }
 
+#include <iostream>
+
 void Game::start()
 {
     this->initNewGame();
 
+    int a =0;
+
     while (true)
     {
         this->GamemodePtr->runGamemode();
+
+        SDL_Event event;
+        while (SDL_PollEvent(&event) != 0) {
+            if (event.type == SDL_QUIT)
+                a = 1;
+        }
     }
 }
 
 void Game::initNewGame()
 {
-    this->GamemodePtr = std::make_unique<Gamemode>(GamemodeCreator::createNewGamemode());
+    this->GamemodePtr = GamemodeCreator::createNewGamemode();
 
     
 }

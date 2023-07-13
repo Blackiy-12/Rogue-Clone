@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Gamemode.h"
+#include <memory>
 
 enum class GamemodeStatus
 {
@@ -10,7 +11,7 @@ enum class GamemodeStatus
 class GamemodeCreator
 {
 public:
-	static Gamemode* createNewGamemode();
+	static std::shared_ptr<Gamemode> createNewGamemode();
 
 private:
 	static GamemodeStatus NewMode;

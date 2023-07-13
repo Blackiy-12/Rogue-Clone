@@ -7,7 +7,7 @@ class Gamemode
 public:
 	Gamemode() {}
 
-	virtual ~Gamemode() = 0;
+	virtual ~Gamemode() {};
 
 	virtual void runGamemode() = 0;
 };

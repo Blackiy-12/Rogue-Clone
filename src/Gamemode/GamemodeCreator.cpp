@@ -4,18 +4,13 @@
 
 GamemodeStatus GamemodeCreator::NewMode = GamemodeStatus::MainMenu;
 
-Gamemode* GamemodeCreator::createNewGamemode()
+std::shared_ptr<Gamemode> GamemodeCreator::createNewGamemode()
 {
-	Gamemode* NewMode = nullptr;
-
 	switch (GamemodeCreator::NewMode)
 	{
 	case GamemodeStatus::MainMenu:
-		NewMode = new MainMenuMode();
-		break;
+		return std::make_shared<MainMenuMode>();
 	default:
 		break;
 	}
-
-	return NewMode;
 }

@@ -1,7 +1,8 @@
 #pragma once
 
 #include "../Gamemode/Gamemode.h"
-#include "../Render/Render.h"
+#include "MainMenuWorld.h"
+
 
 class MainMenuMode : public Gamemode
 {
@@ -12,6 +13,8 @@ public:
 
 	void runGamemode() override;
 
-private:	
+private:
+
+	std::unique_ptr<MainMenuWorld> World;
 };
 

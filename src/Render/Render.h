@@ -2,6 +2,8 @@
 
 #include <SDL.h>
 
+class GraphicOfObject;
+
 class Render
 {
 public:
@@ -11,6 +13,14 @@ public:
 	void operator=(const Render&) = delete;
 
 	static Render* getRender();
+
+	SDL_Renderer* getRenderer();
+
+	void drawRenderBuffer();
+
+	void swapRenderer();
+
+	void clearRenderer();
 
 private:
 	static Render* RenderPtr;
@@ -23,5 +33,7 @@ private:
 	Render();
 
 	~Render();
+
+	void drawObject(GraphicOfObject* Object);
 };
 

@@ -2,12 +2,20 @@
 
 TextureHolder* TextureHolder::TextureHolderPtr = nullptr;
 
+std::string FontPath = "./res/Font.ttf";
+
 TextureHolder::TextureHolder()
 {
+    TTF_Init();
+
+    this->GameFont = TTF_OpenFont(FontPath.c_str(), 100);
 }
 
 TextureHolder::~TextureHolder()
 {
+    TTF_CloseFont(this->GameFont);
+
+    TTF_Quit();
 }
 
 TextureHolder* TextureHolder::getTextureHolder()
@@ -20,4 +28,9 @@ TextureHolder* TextureHolder::getTextureHolder()
 
 void TextureHolder::addTexture(std::string TextureName, std::shared_ptr<Texture> TexurePtr)
 {
+}
+
+TTF_Font* TextureHolder::getGameFont()
+{
+    return this->GameFont;
 }
