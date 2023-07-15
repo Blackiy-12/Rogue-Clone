@@ -14,5 +14,7 @@ public:
 	vec2<float> getSize();
 
 	void setNewPositionAndSize(vec2<float> Position, vec2<float> Size);
+
+	void virtual pressButton();
 };
 

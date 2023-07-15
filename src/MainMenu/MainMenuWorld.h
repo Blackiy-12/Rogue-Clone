@@ -3,7 +3,7 @@
 #include <memory>
 
 #include "ButtonTable.h"
-#include "Label.h"
+#include "../Objects/Label.h"
 
 class MainMenuWorld
 {

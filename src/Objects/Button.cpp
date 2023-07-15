@@ -25,3 +25,7 @@ void Button::setNewPositionAndSize(vec2<float> Position, vec2<float> Size)
 
 	this->Graphic->setNewSize(Size);
 }
+
+void Button::pressButton()
+{
+}

@@ -15,6 +15,10 @@ public:
 
 	void start();
 
+	void changeGamemode();
+
+	void exit();
+
 private:
 	Game();
 
@@ -24,5 +28,7 @@ private:
 	static Game* GamePtr;
 
 	std::shared_ptr<Gamemode> GamemodePtr;
+
+	bool Active;
 };
 

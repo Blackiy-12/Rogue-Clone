@@ -5,7 +5,8 @@
 
 enum class GamemodeStatus
 {
-	MainMenu
+	MainMenu,
+	Gameplay
 };
 
 class GamemodeCreator
@@ -13,7 +14,6 @@ class GamemodeCreator
 public:
 	static std::shared_ptr<Gamemode> createNewGamemode();
 
-private:
 	static GamemodeStatus NewMode;
 };
 

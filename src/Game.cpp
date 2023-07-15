@@ -8,6 +8,8 @@ Game* Game::GamePtr = nullptr;
 Game::Game() : GamemodePtr(nullptr)
 {
     Render::getRender();
+
+    this->Active = true;
 }
 
 Game* Game::getGamePointer()
@@ -22,23 +24,23 @@ void Game::start()
 {
     this->initNewGame();
 
-    int a =0;
-
-    while (true)
+    while (this->Active)
     {
         this->GamemodePtr->runGamemode();
-
-        SDL_Event event;
-        while (SDL_PollEvent(&event) != 0) {
-            if (event.type == SDL_QUIT)
-                a = 1;
-        }
     }
+}
+
+void Game::changeGamemode()
+{
+    this->GamemodePtr = GamemodeCreator::createNewGamemode();
+}
+
+void Game::exit()
+{
+    this->Active = false;
 }
 
 void Game::initNewGame()
 {
-    this->GamemodePtr = GamemodeCreator::createNewGamemode();
-
-    
+    this->changeGamemode();
 }
