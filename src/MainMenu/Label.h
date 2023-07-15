@@ -11,6 +11,9 @@ public:
 
 	~Label();
 
+protected:
+	Label(std::string LabelText);
+
 private:
 	std::string LabelText;
 };

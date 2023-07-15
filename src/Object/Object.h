@@ -10,10 +10,7 @@ public:
 
 	virtual ~Object() {};
 
-	//virtual void render() = 0;
-
 protected:
-
 	std::unique_ptr<GraphicOfObject> Graphic;
 };
 

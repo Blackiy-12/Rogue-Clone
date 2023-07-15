@@ -18,8 +18,6 @@ Game* Game::getGamePointer()
     return Game::GamePtr;
 }
 
-#include <iostream>
-
 void Game::start()
 {
     this->initNewGame();

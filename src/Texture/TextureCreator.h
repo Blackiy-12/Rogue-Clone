@@ -7,7 +7,7 @@
 class TextureCreator
 {
 public:
-	static std::shared_ptr<Texture> createTexure(std::string TextureName, int RotationAngle);
+	static std::shared_ptr<Texture> createTexure(const char* TextureName, int RotationAngle);
 
 	static std::shared_ptr<Texture> createLabelTexture(std::string LabelText);
 

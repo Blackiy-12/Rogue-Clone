@@ -3,9 +3,9 @@
 #include "TextureHolder.h"
 #include "../Render/Render.h"
 
-std::shared_ptr<Texture> TextureCreator::createTexure(std::string TextureName, int RotationAngle)
+std::shared_ptr<Texture> TextureCreator::createTexure(const char* TextureName, int RotationAngle)
 {
-    return std::shared_ptr<Texture>();
+    return TextureHolder::getTextureHolder()->getTexture(TextureName);
 }
 
 std::shared_ptr<Texture> TextureCreator::createLabelTexture(std::string LabelText)

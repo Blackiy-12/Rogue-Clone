@@ -15,14 +15,16 @@ public:
 
 	static TextureHolder* getTextureHolder();
 
-	void addTexture(std::string TextureName, std::shared_ptr<Texture> TexurePtr);
+	std::shared_ptr<Texture> getTexture(const char* TextureName);
+
+	void addTexture(const char* TexureName, std::shared_ptr<Texture> TexurePtr);
 
 	TTF_Font* getGameFont();
 
 private:
 	static TextureHolder* TextureHolderPtr;
 
-	std::unordered_map<std::string, std::shared_ptr<Texture>> Textures;
+	std::unordered_map<const char*, std::shared_ptr<Texture>> Textures;
 
 	TTF_Font* GameFont;
 

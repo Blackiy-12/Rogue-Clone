@@ -3,7 +3,7 @@
 #include "../../Texture/TextureCreator.h"
 #include "../../Render/RenderBuffer.h"
 
-GraphicOfObject::GraphicOfObject(vec2<float> Size, vec2<float> Position, std::string TextureName, int RotationAngle, int RenderPrioritie) : Size(Size), TopLeftPosition(Position)
+GraphicOfObject::GraphicOfObject(vec2<float> Size, vec2<float> Position, const char* TextureName, int RotationAngle, int RenderPrioritie) : Size(Size), TopLeftPosition(Position)
 {
 	this->TexturePtr = TextureCreator::createTexure(TextureName, RotationAngle);
 
@@ -13,6 +13,23 @@ GraphicOfObject::GraphicOfObject(vec2<float> Size, vec2<float> Position, std::st
 GraphicOfObject::GraphicOfObject(vec2<float> Size, vec2<float> Position, std::string LabelText, int RenderPrioritie) : Size(Size), TopLeftPosition(Position)
 {
 	this->TexturePtr = TextureCreator::createLabelTexture(LabelText);
+
+	RenderBuffer::getRenderBuffer()->addObjectToRender(this, RenderPrioritie);
+}
+
+GraphicOfObject::~GraphicOfObject()
+{
+	RenderBuffer::getRenderBuffer()->removeObjectFromRender(this);
+}
+
+void GraphicOfObject::setNewPosition(vec2<float> NewPosition)
+{
+	this->TopLeftPosition = NewPosition;
+}
+
+void GraphicOfObject::setNewSize(vec2<float> NewSize)
+{
+	this->Size = NewSize;
 }
 
 vec2<float> GraphicOfObject::getSize()
