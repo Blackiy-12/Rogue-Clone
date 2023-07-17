@@ -28,12 +28,12 @@ TextureHolder* TextureHolder::getTextureHolder()
 
 std::shared_ptr<Texture> TextureHolder::getTexture(const char* TextureName)
 {
-    return this->Textures[TextureName];
+    return this->Textures.at(TextureName);
 }
 
 void TextureHolder::addTexture(const char* TextureName, std::shared_ptr<Texture> TexurePtr)
 {
-    this->Textures[TextureName] = TexurePtr;
+    this->Textures.insert({ TextureName, TexurePtr });
 }
 
 TTF_Font* TextureHolder::getGameFont()

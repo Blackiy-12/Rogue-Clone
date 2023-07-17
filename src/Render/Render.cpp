@@ -55,9 +55,9 @@ Render* Render::getRender()
 
 Render::Render()
 {
-	this->WindowPtr = SDL_CreateWindow(WindowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_RESIZABLE | SDL_TEXTUREACCESS_TARGET);
+	this->WindowPtr = SDL_CreateWindow(WindowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 200, SDL_WINDOW_RESIZABLE | SDL_TEXTUREACCESS_TARGET);
 
-	this->RendererPtr = SDL_CreateRenderer(this->WindowPtr, -1, SDL_RENDERER_ACCELERATED );
+	this->RendererPtr = SDL_CreateRenderer(this->WindowPtr, -1, SDL_RENDERER_SOFTWARE );
 
 	RenderBuffer::getRenderBuffer()->addRenderPriorite();
 

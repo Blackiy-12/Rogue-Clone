@@ -1,6 +1,7 @@
 #include "Input.h"
 
 #include "InputReceiver.h"
+#include <algorithm>
 
 Input* Input::InputPtr = nullptr;
 
@@ -83,8 +84,13 @@ Input::~Input()
 
 void Input::sendMessage(InputMessage Message)
 {
-	for (auto Subscriber : this->Subscribers)
+	auto SurbscriberAtSending = this->Subscribers;
+
+	for (auto Subscriber : SurbscriberAtSending)
 	{
+		if (std::find(this->Subscribers.begin(), this->Subscribers.end(), Subscriber) == this->Subscribers.end())
+			continue;
+
 		Subscriber->receiveMessage(Message);
 	}
 }
