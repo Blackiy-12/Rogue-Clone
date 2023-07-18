@@ -4,7 +4,7 @@
 #include "Room.h"
 #include <memory>
 
-const vec2<int> LEVEL_SIZE = {75, 20};
+const vec2<int> LEVEL_SIZE = {74, 19};
 
 class Level
 {

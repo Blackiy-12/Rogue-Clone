@@ -98,7 +98,7 @@ void TextureLoader::loadEnviromentTextures()
 
 	SDL_SetRenderTarget(Render::getRender()->getRenderer(), TextureFloor);
 
-	SDL_Rect FloorPosition = { 16, 0, 16, 16 };
+	SDL_Rect FloorPosition = { 32, 0, 16, 16 };
 
 	SDL_RenderCopy(Render::getRender()->getRenderer(), TileMap, &FloorPosition, NULL);
 

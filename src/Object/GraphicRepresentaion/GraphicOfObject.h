@@ -27,9 +27,14 @@ private:
 class GraphicOfObject
 {
 public:
+	//Label
 	GraphicOfObject(vec2<float> Size, vec2<float> Position, const char* TextureName, int RotationAngle, int RenderPrioritie);
 
+	//Common object
 	GraphicOfObject(vec2<float> Size, vec2<float> Position, std::string LabelText, int RenderPrioritie);
+
+	//Floor
+	GraphicOfObject(vec2<float> Size, vec2<float> Position, vec2<int> FloorSize, int RenderPrioritie);
 
 	~GraphicOfObject();
 

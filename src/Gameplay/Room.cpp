@@ -12,6 +12,7 @@ void Room::setVisible()
 {
 	this->Visiable = true;
 	this->showAllWalls();
+	this->showWholeFloor();
 }
 
 void Room::showAllWalls()
@@ -58,4 +59,13 @@ void Room::showAllWalls()
 	WallPosition = { 0.05f + ((TopLeftPosition.x) * CellSize.x), 0.1f + ((TopLeftPosition.y + 1 - 0.2f) * CellSize.y) };
 	WallSize = { CellSize.x, CellSize.y * (Size.y - 1 + 0.4f) };
 	this->Walls.push_back(std::make_unique<Wall>(WallType::VERTICAL, WallPosition, WallSize));
+}
+
+void Room::showWholeFloor()
+{
+	vec2<int> FloorSize = { this->Size.x - 1, this->Size.y - 1 };
+	vec2<float> FloorTopLeft = { 0.05f + ((TopLeftPosition.x + 1) * CellSize.x), 0.1f + ((TopLeftPosition.y + 1) * CellSize.y) };
+	vec2<float> FloorScreenSize = { FloorSize.x * CellSize.x, FloorSize.y * CellSize.y };
+
+	this->FloorPtr = std::make_unique<Floor>(FloorTopLeft, FloorScreenSize, FloorSize);
 }

@@ -3,6 +3,7 @@
 #include "../vec.h"
 #include <list>
 #include "../Objects/Wall.h"
+#include "../Objects/Floor.h"
 #include <memory>
 
 const vec2<float> CellSize = { 0.9f / 75, 0.8f / 20 };
@@ -25,7 +26,11 @@ private:
 
 	std::list<std::unique_ptr<Wall>> Walls;
 
+	std::unique_ptr<Floor> FloorPtr;
+
 private:
 	void showAllWalls();
+
+	void showWholeFloor();
 };
 

@@ -17,6 +17,13 @@ GraphicOfObject::GraphicOfObject(vec2<float> Size, vec2<float> Position, std::st
 	RenderBuffer::getRenderBuffer()->addObjectToRender(this, RenderPrioritie);
 }
 
+GraphicOfObject::GraphicOfObject(vec2<float> Size, vec2<float> Position, vec2<int> FloorSize, int RenderPrioritie) : Size(Size), TopLeftPosition(Position)
+{
+	this->TexturePtr = TextureCreator::createFloorTexture(FloorSize);
+
+	RenderBuffer::getRenderBuffer()->addObjectToRender(this, RenderPrioritie);
+}
+
 GraphicOfObject::~GraphicOfObject()
 {
 	RenderBuffer::getRenderBuffer()->removeObjectFromRender(this);
