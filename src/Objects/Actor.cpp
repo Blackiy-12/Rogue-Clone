@@ -30,6 +30,11 @@ int Actor::getCurrentArmor()
 	return this->Armor.getArmorClass();
 }
 
+int Actor::getCurrentStrength()
+{
+	return this->Strength.getStrength();
+}
+
 void Actor::move(vec2<int> VectorOfMovment)
 {
 }

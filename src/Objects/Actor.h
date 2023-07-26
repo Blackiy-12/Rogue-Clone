@@ -5,6 +5,7 @@
 #include "ActorsComponents/HealthComponent.h"
 #include "ActorsComponents/ActorLevel.h"
 #include "ActorsComponents/ActorArmor.h"
+#include "ActorsComponents/ActorStrength.h"
 #include <memory>
 
 class GameplayWorld;
@@ -24,6 +25,8 @@ public:
 
 	int getCurrentArmor();
 
+	int getCurrentStrength();
+
 protected:
 	GameplayWorld* World;
 
@@ -34,6 +37,8 @@ protected:
 	ActorLevel LevelSystem;
 
 	ActorArmor Armor;
+
+	ActorStrength Strength;
 
 protected:
 	virtual void move(vec2<int> VectorOfMovment);

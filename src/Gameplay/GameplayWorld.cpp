@@ -24,7 +24,7 @@ GameplayWorld::GameplayWorld()
 
 	this->HealthUIPtr = std::make_unique<HealthUI>(this->RoguePtr->getCurrentHealth(), this->RoguePtr->getMaxHealth(), HealthUIPosition, UISize);
 
-	this->StrengthUI = std::make_unique<AtributeLabel>("Strength", -1, StrengthUIPosition, UISize);
+	this->StrengthUI = std::make_unique<AtributeLabel>("Strength", this->RoguePtr->getCurrentStrength(), StrengthUIPosition, UISize);
 
 	this->GoldUI = std::make_unique<AtributeLabel>("Gold", this->RoguePtr->getGoldValue(), GoldUIPosition, UISize);
 
