@@ -14,7 +14,7 @@ GameplayWorld::GameplayWorld()
 
 	this->RoguePtr = std::make_unique<Rogue>(this, this->Levels->getSpawnPosition());
 
-	this->RogueLevelUI = std::make_unique<Label>(std::string("Level:" + std::to_string(this->RoguePtr->getCurrentLevel())), RogueLevelUIPosition, UISize);
+	this->RogueLevelUI = std::make_unique<AtributeLabel>("Level", this->RoguePtr->getCurrentLevel(), RogueLevelUIPosition, UISize);
 
 	this->HealthUIPtr = std::make_unique<HealthUI>(this->RoguePtr->getCurrentHealth(), this->RoguePtr->getMaxHealth(), HealthUIPosition, UISize);
 }
