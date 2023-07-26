@@ -1,8 +1,7 @@
 #include "Actor.h"
 
-#include "../Gameplay/Level.h"
 
-Actor::Actor(GameplayWorld* World, vec2<int> LevelPosition) : World(World), LevelPosition(LevelPosition), LevelSystem(), Armor()
+Actor::Actor(Level* World, vec2<int> LevelPosition) : World(World), LevelPosition(LevelPosition), LevelSystem(), Armor()
 {
 }
 

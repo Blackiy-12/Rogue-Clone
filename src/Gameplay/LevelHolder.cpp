@@ -21,3 +21,8 @@ vec2<int> LevelHolder::getSpawnPosition()
 {
 	return this->CurrentLevel->get()->getSpawnLocation();
 }
+
+Level* LevelHolder::getCurrentLevel()
+{
+	return this->CurrentLevel->get();
+}

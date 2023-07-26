@@ -63,5 +63,5 @@ void Wall::setNewWallSize(int NewWallSize)
 
 int Wall::getWallSize()
 {
-	return 0;
+	return this->WallSize;
 }

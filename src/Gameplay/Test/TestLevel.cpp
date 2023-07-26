@@ -1,5 +1,7 @@
 #include "TestLevel.h"
 
+#include "../../Objects/Monster/Monster.h"
+
 TestLevel::TestLevel()
 {
 	this->generateLevel();
@@ -15,4 +17,6 @@ void TestLevel::generateLevel()
 	this->Rooms.begin()->get()->setVisible();
 
 	this->SpawnLocation = { 5, 5 };
+
+	this->MonstersOnLevel.push_back(std::make_unique<Monster>(this, vec2<int>(60, 8)));
 }

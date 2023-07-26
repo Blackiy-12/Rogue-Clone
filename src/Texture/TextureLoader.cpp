@@ -89,7 +89,7 @@ void TextureLoader::loadEnviromentTextures()
 
 	SDL_RenderCopy(Render::getRender()->getRenderer(), TileMap, &StairsPosition, NULL);
 
-	std::shared_ptr<Texture> Stairs = std::make_shared<Texture>(TextureDoor);
+	std::shared_ptr<Texture> Stairs = std::make_shared<Texture>(TextureStairs);
 
 	TextureHolder::getTextureHolder()->addTexture(TextureNames[TEXURE_NAME_INDEX::STAIRS], Stairs);
 

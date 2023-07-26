@@ -15,6 +15,8 @@ public:
 
 	void setVisible();
 
+	bool isOnWall(vec2<int> Position);
+
 private:
 	vec2<int> TopLeftPosition;
 	

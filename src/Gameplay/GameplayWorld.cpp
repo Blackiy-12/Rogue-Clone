@@ -18,7 +18,7 @@ GameplayWorld::GameplayWorld()
 {
 	this->Levels = std::make_unique<LevelHolder>(this);
 
-	this->RoguePtr = std::make_unique<Rogue>(this, this->Levels->getSpawnPosition());
+	this->RoguePtr = std::make_unique<Rogue>(this->Levels->getCurrentLevel(), this->Levels->getSpawnPosition());
 
 	this->RogueLevelUI = std::make_unique<AtributeLabel>("Level", this->RoguePtr->getCurrentLevel(), RogueLevelUIPosition, UISize);
 

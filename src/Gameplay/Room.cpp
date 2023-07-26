@@ -17,6 +17,17 @@ void Room::setVisible()
 	this->showWholeFloor();
 }
 
+bool Room::isOnWall(vec2<int> Position)
+{
+	if (Position.x == this->TopLeftPosition.x || Position.x == this->TopLeftPosition.x + this->Size.x)
+		return true;
+
+	if (Position.y == this->TopLeftPosition.y || Position.y == this->TopLeftPosition.y + this->Size.y)
+		return true;
+
+	return false;
+}
+
 void Room::showAllWalls()
 {
 	vec2<float> WallPosition = { 0, 0 };

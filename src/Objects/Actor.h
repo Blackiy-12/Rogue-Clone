@@ -6,14 +6,13 @@
 #include "ActorsComponents/ActorLevel.h"
 #include "ActorsComponents/ActorArmor.h"
 #include "ActorsComponents/ActorStrength.h"
+#include "../Gameplay/Level.h"
 #include <memory>
-
-class GameplayWorld;
 
 class Actor : public Object
 {
 public:
-	Actor(GameplayWorld* World, vec2<int> LevelPosition);
+	Actor(Level* World, vec2<int> LevelPosition);
 
 	~Actor();
 
@@ -28,7 +27,7 @@ public:
 	int getCurrentStrength();
 
 protected:
-	GameplayWorld* World;
+	Level* World;
 
 	vec2<int> LevelPosition;
 

@@ -7,7 +7,7 @@
 class Rogue : public Actor, public InputReceiver
 {
 public:
-	Rogue(GameplayWorld* World, vec2<int> LevelPosition);
+	Rogue(Level* World, vec2<int> LevelPosition);
 
 	~Rogue();
 

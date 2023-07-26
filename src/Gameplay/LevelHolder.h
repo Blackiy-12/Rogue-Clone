@@ -15,6 +15,8 @@ public:
 
 	vec2<int> getSpawnPosition();
 
+	Level* getCurrentLevel();
+
 private:
 	const int MAX_LEVEL = 10;
 
