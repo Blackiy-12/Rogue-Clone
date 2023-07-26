@@ -8,6 +8,12 @@ const vec2<float> RogueLevelUIPosition( 0.0f, 0.9f);
 
 const vec2<float> HealthUIPosition( 0.21f, 0.9f);
 
+const vec2<float> StrengthUIPosition( 0.42f, 0.9f);
+
+const vec2<float> GoldUIPosition( 0.63f, 0.9f);
+
+const vec2<float> ArmorUIPosition( 0.84f, 0.9f);
+
 GameplayWorld::GameplayWorld()
 {
 	this->Levels = std::make_unique<LevelHolder>(this);
@@ -17,6 +23,12 @@ GameplayWorld::GameplayWorld()
 	this->RogueLevelUI = std::make_unique<AtributeLabel>("Level", this->RoguePtr->getCurrentLevel(), RogueLevelUIPosition, UISize);
 
 	this->HealthUIPtr = std::make_unique<HealthUI>(this->RoguePtr->getCurrentHealth(), this->RoguePtr->getMaxHealth(), HealthUIPosition, UISize);
+
+	this->StrengthUI = std::make_unique<AtributeLabel>("Strength", -1, StrengthUIPosition, UISize);
+
+	this->GoldUI = std::make_unique<AtributeLabel>("Gold", this->RoguePtr->getGoldValue(), GoldUIPosition, UISize);
+
+	this->ArmorUI = std::make_unique<AtributeLabel>("Armor", -1, ArmorUIPosition, UISize);
 }
 
 GameplayWorld::~GameplayWorld()

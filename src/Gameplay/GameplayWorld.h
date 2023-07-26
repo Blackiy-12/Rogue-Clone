@@ -21,5 +21,11 @@ private:
 	std::unique_ptr<AtributeLabel> RogueLevelUI;
 
 	std::unique_ptr<HealthUI> HealthUIPtr;
+
+	std::unique_ptr<AtributeLabel> StrengthUI;
+
+	std::unique_ptr<AtributeLabel> GoldUI;
+	
+	std::unique_ptr<AtributeLabel> ArmorUI;
 };
 
