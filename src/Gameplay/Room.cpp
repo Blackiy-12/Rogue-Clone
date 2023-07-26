@@ -1,5 +1,7 @@
 #include "Room.h"
 
+#include "Level.h"
+
 Room::Room(vec2<int> TopLeftPosition, vec2<int> Size) : TopLeftPosition(TopLeftPosition), Size(Size), Visiable(false)
 {
 }

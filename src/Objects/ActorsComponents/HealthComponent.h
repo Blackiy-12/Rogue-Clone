@@ -12,6 +12,10 @@ public:
 
 	void decreaseHP(int NumberToDeacrease);
 
+	int getCurrentHP();
+
+	int getMaxHP();
+
 	bool isCurrentHealthIsZero();
 
 private:

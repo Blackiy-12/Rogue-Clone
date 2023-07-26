@@ -54,6 +54,11 @@ RenderInfo GraphicOfObject::getRenderInfo()
 	return RenderInfo(this->TopLeftPosition, this->Size, this->TexturePtr->getTexture());
 }
 
+void GraphicOfObject::setNewTextTexture(std::string LabelText)
+{
+	this->TexturePtr = TextureCreator::createLabelTexture(LabelText);
+}
+
 RenderInfo::RenderInfo(vec2<float> TopLeftPosition, vec2<float> Size, SDL_Texture* Texture) : 
 	TopLeftPosition(TopLeftPosition), Size(Size), Texture(Texture), Placement()
 {

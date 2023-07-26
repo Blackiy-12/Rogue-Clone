@@ -48,6 +48,8 @@ public:
 
 	RenderInfo getRenderInfo();
 
+	void setNewTextTexture(std::string LabelText);
+
 private:
 	vec2<float> TopLeftPosition;
 	

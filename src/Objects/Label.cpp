@@ -12,6 +12,15 @@ Label::~Label()
 {
 }
 
+void Label::updateText(std::string NewText)
+{
+	if (this->LabelText == NewText)
+		return;
+
+	this->LabelText = NewText;
+	this->Graphic->setNewTextTexture(this->LabelText);
+}
+
 Label::Label(std::string LabelText)
 {
 	this->LabelText = LabelText;

@@ -35,6 +35,16 @@ void HealthComponent::decreaseHP(int NumberToDeacrease)
 		this->CurrentHP = 0;
 }
 
+int HealthComponent::getCurrentHP()
+{
+	return this->CurrentHP;
+}
+
+int HealthComponent::getMaxHP()
+{
+	return this->MaxHP;
+}
+
 bool HealthComponent::isCurrentHealthIsZero()
 {
 	if (this->CurrentHP == 0)

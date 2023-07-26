@@ -6,8 +6,6 @@
 #include "../Objects/Floor.h"
 #include <memory>
 
-const vec2<float> CellSize = { 0.9f / 75, 0.8f / 20 };
-
 class Room
 {
 public:

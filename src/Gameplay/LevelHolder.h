@@ -13,9 +13,17 @@ public:
 
 	~LevelHolder();
 
+	vec2<int> getSpawnPosition();
+
 private:
+	const int MAX_LEVEL = 10;
+
 	GameplayWorld* World;
 
 	std::list<std::unique_ptr<Level>> Levels;
+
+	int CurrentLevelIndex;
+
+	std::list<std::unique_ptr<Level>>::iterator CurrentLevel;
 };
 

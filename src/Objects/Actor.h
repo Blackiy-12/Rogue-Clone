@@ -5,16 +5,26 @@
 #include "ActorsComponents/HealthComponent.h"
 #include <memory>
 
+class GameplayWorld;
+
 class Actor : public Object
 {
 public:
-	Actor();
+	Actor(GameplayWorld* World, vec2<int> LevelPosition);
 
 	~Actor();
 
-private:
+protected:
+	GameplayWorld* World;
+
 	vec2<int> LevelPosition;
 
 	std::unique_ptr<HealthComponent> Health;
+
+protected:
+	virtual void move(vec2<int> VectorOfMovment);
+
+	virtual void updatePosition(vec2<int> NewPosition);
+
 };
 

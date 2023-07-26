@@ -11,6 +11,8 @@ public:
 
 	~Label();
 
+	void updateText(std::string NewText);
+
 protected:
 	Label(std::string LabelText);
 
