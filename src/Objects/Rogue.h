@@ -2,6 +2,7 @@
 
 #include "Actor.h"
 #include "../Input/InputReceiver.h"
+#include "ActorsComponents/ActorLevel.h"
 
 class Rogue : public Actor, public InputReceiver
 {
@@ -16,8 +17,12 @@ public:
 
 	int getMaxHealth();
 
+	int getCurrentLevel();
+
 protected:
 	void move(vec2<int> VectorOfMovment) override;
 
+private:
+	ActorLevel RogueLevel;
 };
 
