@@ -13,6 +13,8 @@ public:
 
 	~GameplayWorld();
 
+	Rogue* getRoguePtr();
+
 private:
 	std::unique_ptr<LevelHolder> Levels;
 

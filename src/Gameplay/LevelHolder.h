@@ -17,6 +17,8 @@ public:
 
 	Level* getCurrentLevel();
 
+	Rogue* getRogue();
+
 private:
 	const int MAX_LEVEL = 10;
 

@@ -5,7 +5,7 @@
 class TestLevel : public Level
 {
 public:
-	TestLevel();
+	TestLevel(LevelHolder* Holder);
 
 	~TestLevel();
 

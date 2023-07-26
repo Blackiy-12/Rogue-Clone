@@ -1,8 +1,10 @@
 #include "Level.h"
 
 #include "../Objects/Monster/Monster.h"
+#include "LevelHolder.h"
+#include "../Objects/Rogue.h"
 
-Level::Level() : SpawnLocation(0,0)
+Level::Level(LevelHolder* Holder) : SpawnLocation(0,0), Holder(Holder)
 {
 }
 
@@ -29,6 +31,18 @@ ObjectClass Level::getObjectsClass(vec2<int> LevelPosition)
 
         CurretRoom++;
     }
+
+    auto CurrentMonster = this->MonstersOnLevel.begin();
+    while (CurrentMonster != this->MonstersOnLevel.end())
+    {
+        if (CurrentMonster->get()->getLevelPosition() == LevelPosition)
+            return ObjectClass::ACTOR;
+
+        CurrentMonster++;
+    }
+
+    if (this->Holder->getRogue()->getLevelPosition() == LevelPosition)
+        return ObjectClass::ACTOR;
 
     return ObjectClass::NONE;
 }

@@ -34,3 +34,8 @@ GameplayWorld::GameplayWorld()
 GameplayWorld::~GameplayWorld()
 {
 }
+
+Rogue* GameplayWorld::getRoguePtr()
+{
+	return this->RoguePtr.get();
+}

@@ -9,6 +9,11 @@ Actor::~Actor()
 {
 }
 
+vec2<int> Actor::getLevelPosition()
+{
+	return this->LevelPosition;
+}
+
 int Actor::getCurrentHealth()
 {
 	return this->Health->getCurrentHP();

@@ -16,6 +16,8 @@ public:
 
 	~Actor();
 
+	vec2<int> getLevelPosition();
+
 	int getCurrentHealth();
 
 	int getMaxHealth();

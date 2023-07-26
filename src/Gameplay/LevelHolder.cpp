@@ -1,12 +1,13 @@
 #include "LevelHolder.h"
 
 #include "Test/TestLevel.h"
+#include "GameplayWorld.h"
 
 LevelHolder::LevelHolder(GameplayWorld* World)
 {
 	this->World = World;
 
-	this->Levels.push_back(std::make_unique<TestLevel>());
+	this->Levels.push_back(std::make_unique<TestLevel>(this));
 
 	this->CurrentLevel = this->Levels.begin();
 
@@ -25,4 +26,9 @@ vec2<int> LevelHolder::getSpawnPosition()
 Level* LevelHolder::getCurrentLevel()
 {
 	return this->CurrentLevel->get();
+}
+
+Rogue* LevelHolder::getRogue()
+{
+	return this->World->getRoguePtr();
 }

@@ -2,7 +2,7 @@
 
 #include "../../Objects/Monster/Monster.h"
 
-TestLevel::TestLevel()
+TestLevel::TestLevel(LevelHolder* Holder) : Level(Holder)
 {
 	this->generateLevel();
 }
