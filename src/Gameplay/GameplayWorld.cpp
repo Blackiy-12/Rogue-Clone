@@ -28,7 +28,7 @@ GameplayWorld::GameplayWorld()
 
 	this->GoldUI = std::make_unique<AtributeLabel>("Gold", this->RoguePtr->getGoldValue(), GoldUIPosition, UISize);
 
-	this->ArmorUI = std::make_unique<AtributeLabel>("Armor", -1, ArmorUIPosition, UISize);
+	this->ArmorUI = std::make_unique<AtributeLabel>("Armor", this->RoguePtr->getCurrentArmor(), ArmorUIPosition, UISize);
 }
 
 GameplayWorld::~GameplayWorld()

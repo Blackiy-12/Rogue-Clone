@@ -2,12 +2,32 @@
 
 #include "../Gameplay/Level.h"
 
-Actor::Actor(GameplayWorld* World, vec2<int> LevelPosition) : World(World), LevelPosition(LevelPosition)
+Actor::Actor(GameplayWorld* World, vec2<int> LevelPosition) : World(World), LevelPosition(LevelPosition), LevelSystem(), Armor()
 {
 }
 
 Actor::~Actor()
 {
+}
+
+int Actor::getCurrentHealth()
+{
+	return this->Health->getCurrentHP();
+}
+
+int Actor::getMaxHealth()
+{
+	return this->Health->getMaxHP();
+}
+
+int Actor::getCurrentLevel()
+{
+	return this->LevelSystem.getCurrentLevel();
+}
+
+int Actor::getCurrentArmor()
+{
+	return this->Armor.getArmorClass();
 }
 
 void Actor::move(vec2<int> VectorOfMovment)

@@ -2,7 +2,6 @@
 
 #include "Actor.h"
 #include "../Input/InputReceiver.h"
-#include "ActorsComponents/ActorLevel.h"
 #include "ActorsComponents/Gold.h"
 
 class Rogue : public Actor, public InputReceiver
@@ -14,19 +13,12 @@ public:
 
 	void receiveMessage(InputMessage Message) override;
 
-	int getCurrentHealth();
-
-	int getMaxHealth();
-
-	int getCurrentLevel();
-
 	int getGoldValue();
 
 protected:
 	void move(vec2<int> VectorOfMovment) override;
 
 private:
-	ActorLevel RogueLevel;
 
 	Gold GoldValue;
 };

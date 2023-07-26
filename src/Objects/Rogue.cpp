@@ -3,7 +3,7 @@
 #include "../Gameplay/Level.h"
 #include "../Texture/TextueNames.h"
 
-Rogue::Rogue(GameplayWorld* World, vec2<int> LevelPosition) : Actor(World, LevelPosition), RogueLevel(), GoldValue()
+Rogue::Rogue(GameplayWorld* World, vec2<int> LevelPosition) : Actor(World, LevelPosition), GoldValue()
 {
 	this->Graphic = std::make_unique<GraphicOfObject>(CellSize, vec2<float>{ 0.0f, 0.0f }, TextureNames[TEXURE_NAME_INDEX::DOOR], 0, 2);
 
@@ -46,21 +46,6 @@ void Rogue::receiveMessage(InputMessage Message)
 			break;
 		}
 	}
-}
-
-int Rogue::getCurrentHealth()
-{
-	return this->Health->getCurrentHP();
-}
-
-int Rogue::getMaxHealth()
-{
-	return this->Health->getMaxHP();
-}
-
-int Rogue::getCurrentLevel()
-{
-	return this->RogueLevel.getCurrentLevel();
 }
 
 int Rogue::getGoldValue()
