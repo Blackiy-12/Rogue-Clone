@@ -46,3 +46,20 @@ ObjectClass Level::getObjectsClass(vec2<int> LevelPosition)
 
     return ObjectClass::NONE;
 }
+
+Actor* Level::getActor(vec2<int> ActorPosition)
+{
+    if (this->Holder->getRogue()->getLevelPosition() == ActorPosition)
+        return this->Holder->getRogue();
+
+    auto CurrentMonster = this->MonstersOnLevel.begin();
+    while (CurrentMonster != this->MonstersOnLevel.end())
+    {
+        if (CurrentMonster->get()->getLevelPosition() == ActorPosition)
+            return CurrentMonster->get();
+
+        CurrentMonster++;
+    }
+
+    return nullptr;
+}

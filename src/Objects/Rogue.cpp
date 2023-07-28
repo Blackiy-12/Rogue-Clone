@@ -54,10 +54,25 @@ int Rogue::getGoldValue()
 
 void Rogue::move(vec2<int> VectorOfMovment)
 {
-	auto PosibleNewPosition = this->LevelPosition + VectorOfMovment;
+	auto Destination = this->LevelPosition + VectorOfMovment;
 
-	auto ObjectType = this->World->getObjectsClass(PosibleNewPosition);
+	auto ObjectType = this->World->getObjectsClass(Destination);
 
 	if (ObjectType == ObjectClass::NONE)
-		this->updatePosition(PosibleNewPosition);
+		this->updatePosition(Destination);
+
+	else if (ObjectType == ObjectClass::ACTOR)
+		this->atack(Destination);
+		
+}
+
+void Rogue::atack(vec2<int> AtackPosition)
+{
+	auto Enemy = this->World->getActor(AtackPosition);
+
+	if (Enemy == nullptr)
+		return;
+
+	if (Enemy->getCurrentArmor() < 20)
+		Enemy->applyDamage(1);
 }

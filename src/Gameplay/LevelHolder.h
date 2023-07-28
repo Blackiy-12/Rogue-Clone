@@ -5,6 +5,7 @@
 #include <memory>
 
 class GameplayWorld;
+class Rogue;
 
 class LevelHolder
 {

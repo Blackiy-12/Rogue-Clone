@@ -28,6 +28,8 @@ public:
 
 	int getCurrentStrength();
 
+	void applyDamage(int DamageValue);
+
 protected:
 	Level* World;
 
@@ -46,5 +48,6 @@ protected:
 
 	virtual void updatePosition(vec2<int> NewPosition);
 
+	virtual void atack(vec2<int> AtackPosition);
 };
 

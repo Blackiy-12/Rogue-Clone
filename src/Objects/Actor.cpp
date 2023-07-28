@@ -39,6 +39,13 @@ int Actor::getCurrentStrength()
 	return this->Strength.getStrength();
 }
 
+#include <iostream> // TODO: delete
+void Actor::applyDamage(int DamageValue)
+{
+
+	std::cout << "HIT";
+}
+
 void Actor::move(vec2<int> VectorOfMovment)
 {
 }
@@ -52,4 +59,8 @@ void Actor::updatePosition(vec2<int> NewPosition)
 	ScreenPosition.y = LevelTopLeftPosition.y + NewPosition.y * CellSize.y;
 
 	this->Graphic->setNewPosition(ScreenPosition);
+}
+
+void Actor::atack(vec2<int> AtackPosition)
+{
 }

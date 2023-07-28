@@ -18,6 +18,7 @@ const vec2<float> LevelTopLeftPosition = { 0.05f, 0.1f };
 
 const vec2<float> CellSize = { 0.9f / 75, 0.8f / 20 };
 
+class Actor;
 class Monster;
 class LevelHolder;
 
@@ -34,6 +35,7 @@ public:
 
 	ObjectClass getObjectsClass(vec2<int> LevelPosition);
 
+	Actor* getActor(vec2<int> ActorPosition);
 protected:
 	LevelHolder* Holder;
 

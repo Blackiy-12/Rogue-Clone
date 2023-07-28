@@ -18,6 +18,8 @@ public:
 protected:
 	void move(vec2<int> VectorOfMovment) override;
 
+	void atack(vec2<int> AtackPosition) override;
+
 private:
 
 	Gold GoldValue;
