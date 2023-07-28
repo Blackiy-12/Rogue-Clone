@@ -1,7 +1,7 @@
 #include "Actor.h"
 
 
-Actor::Actor(Level* World, vec2<int> LevelPosition) : World(World), LevelPosition(LevelPosition), LevelSystem(), Armor()
+Actor::Actor(Level* World, vec2<int> LevelPosition) : World(World), LevelPosition(LevelPosition), LevelSystem(), Armor(), Strength(), Damage(1, 20)
 {
 }
 
@@ -43,7 +43,7 @@ int Actor::getCurrentStrength()
 void Actor::applyDamage(int DamageValue)
 {
 
-	std::cout << "HIT";
+	std::cout << "HIT" << DamageValue << '\n';
 }
 
 void Actor::move(vec2<int> VectorOfMovment)

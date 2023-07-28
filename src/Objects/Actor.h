@@ -6,6 +6,7 @@
 #include "ActorsComponents/ActorLevel.h"
 #include "ActorsComponents/ActorArmor.h"
 #include "ActorsComponents/ActorStrength.h"
+#include "ActorsComponents/AtackComponent.h"
 #include "../Gameplay/Level.h"
 #include <memory>
 
@@ -42,6 +43,8 @@ protected:
 	ActorArmor Armor;
 
 	ActorStrength Strength;
+
+	AtackComponent Damage;
 
 protected:
 	virtual void move(vec2<int> VectorOfMovment);

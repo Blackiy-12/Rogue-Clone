@@ -74,5 +74,5 @@ void Rogue::atack(vec2<int> AtackPosition)
 		return;
 
 	if (Enemy->getCurrentArmor() < 20)
-		Enemy->applyDamage(1);
+		Enemy->applyDamage(this->Damage.trowDamage());
 }
